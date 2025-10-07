@@ -1,4 +1,5 @@
 #program untuk mengecek apakah suatu string merupakan huruf pertama dari string lainnya
+#e.g phrase = "mnid", sentence = "my name is draco". expected output == True.
 #uber interview bullshit
 
 sentence = input("masukkan kalimat\t: ")
