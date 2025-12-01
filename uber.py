@@ -4,15 +4,18 @@
 
 sentence = input("masukkan kalimat\t: ")
 phrase = input("masukkan kata\t\t: ")
-check = ""
+check = []
 
 
 sen_list = sentence.split(" ")
-for word in sen_list :
-	first_letter = word[0]
-	check = check + first_letter
+check = [a[0] for a in sen_list]
 
-if check == phrase:
-	print(True)
+print(phrase.split(" "))
+print(check)
+actcheck = "".join(check)
+
+if actcheck == phrase :
+    print(True)
+    
 else :
-	print(False)
+    print(False)
