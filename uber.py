@@ -6,16 +6,18 @@ sentence = input("masukkan kalimat\t: ")
 phrase = input("masukkan kata\t\t: ")
 check = []
 
+def uber(sentence, phrase, check) :
+	sen_list = sentence.split(" ")
+	check = [a[0] for a in sen_list]
+	actcheck = "".join(check)
 
-sen_list = sentence.split(" ")
-check = [a[0] for a in sen_list]
+	if actcheck == phrase :
+		return True
+		
+	else :
+		return False
 
-print(phrase.split(" "))
-print(check)
-actcheck = "".join(check)
+print(uber(sentence,phrase,check))
 
-if actcheck == phrase :
-    print(True)
-    
-else :
-    print(False)
+
+#O(N) time complexity i guess
