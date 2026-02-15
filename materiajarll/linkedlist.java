@@ -2,6 +2,7 @@ package org.example;
 import java.util.*;
 
 class linkedlist{
+  // dari data
   class Node{
     int val ;
     Node next;
@@ -9,6 +10,8 @@ class linkedlist{
 
   Node head;
 
+  //method untuk menambahkan anggota
+  //lihat contoh penggunaannya pada file App.java
   void add(int newval){
     Node newnode = new Node();
     newnode.val = newval;
@@ -16,6 +19,7 @@ class linkedlist{
     head = newnode;
   }
 
+  //method print
   public String print(){
     Node temp = head; 
     String result = "[";
@@ -23,7 +27,8 @@ class linkedlist{
       result = result + " "+ Integer.toString(temp.val);
       temp = temp.next;
     }
-    result = result + " ]";
+
+    result = result + " ]"; 
     return result;
   }
 }
