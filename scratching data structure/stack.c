@@ -48,6 +48,14 @@ int pop(Stack *stack){
   return popped;
 }
 
+int peek(Stack *stack){
+  if (emptycheck(stack)){
+    printf("EMPTy");
+    return -1 ;
+  }
+  return stack->arr[stack->topi];
+}
+
 int main(){
   Stack s1 ;
   initstack(&s1);
