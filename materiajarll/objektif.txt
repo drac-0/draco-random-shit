@@ -1,0 +1,4 @@
+1. metode menambahkan anggota ke list
+2. metode print selurh anggota list
+3. metode mencari anggota tertentu
+4. metode insert
