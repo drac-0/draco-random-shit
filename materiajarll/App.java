@@ -6,11 +6,13 @@ package org.example;
 
 public class App {
     public static void main(String[] args) {
+      // penambahan anggota manual
       linkedlist ll = new linkedlist();
       ll.add(45);
       ll.add(20);
       System.out.println(ll.print());
       ll.add(12);
       System.out.println(ll.print());
+
     }
 }
