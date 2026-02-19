@@ -38,6 +38,11 @@ DLL *findval (DLL *head, int valtofind){
   return NULL;
 }
 
+void insertafter(DLL *insertnode, DLL *inserted ){
+  inserted->next = insertnode->next;
+  insertnode->next = inserted;
+}
+
 int main(){
   DLL *head ;
   DLL *temp ;
@@ -66,6 +71,8 @@ int main(){
 
   temp = findval(head, 0);
   printf("%d found inside the ll\n", temp->val);
-  
 
+  insertafter(temp, append(17));
+  listprint(head);
+ 
 }
