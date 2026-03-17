@@ -17,8 +17,6 @@ consdict = {
     "div" : div
 }
 
-actfun = consdict.get("add")
-print(actfun)
 
 def operation(fun, val1,val2):
     #what actually happen is, we 
