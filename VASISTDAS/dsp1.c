@@ -27,21 +27,25 @@ uint hash(char *key){
 }
 
 void insert(char *key, void (*func)(int a, int b)){
+      static int first = 0 ;
       uint index = hash(key) % LENG ;
+      printf("%d, %s \n",index, key);
+
 
       hashmap *hm = malloc(sizeof(hashmap)); // we allocate a memories in heap
                                              // for the size of hashmap struct, since both of the variable is a pointer and the size of it in 64 bytes system is 8 bytes so we allocate 16 bytes
       hm->key = key;
       hm->func = func;
-      
-      if (hastable[index] == NULL){
-            hastable[index] = hm;
-      }
-      else{
-            hastable[index + 1]= hm;
-      }
 
-
+      check:
+      if (hastable[index] != NULL){
+            index += 1;
+            if (index >= LENG){
+                  index = 0;
+            }
+            goto check;
+      }
+      hastable[index] = hm;
 }
 
 hashmap *look (char *key){
@@ -74,6 +78,12 @@ void test(int a, int b){
 int main(){
       insert("mul", test);
       insert("div", test);
+      insert("yadi", test);
+      insert("wawan", test);
+      insert("asd", test);
+      insert("priya", test);
+      insert("warm", test);
+      insert("sia", test);
       printhash();
       return 0;
       
