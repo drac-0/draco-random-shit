@@ -22,11 +22,8 @@ int main(){
       }
       
       //times sqrt also ideal best
-      for (int i = 0 ; i < 3; i++){
-            
-      }
-      double ideal_picture_of_myself[3]= {0.0,0.0,0.0};
-      double ideal_picutre_of_greg[3] = {110.0,110.0,110.0}; //this way of calculating the ideal worst is shit
+      double ideal_picture_of_myself[3];
+      double ideal_picutre_of_greg[3] ; //this way of calculating the ideal worst is shit
 
       for (int i = 0 ; i < 3; i++){
             for (int j = 0 ; j < 3 ; j++){
@@ -34,6 +31,11 @@ int main(){
             }
       }
 
+      for (int i = 0 ; i < 3; i++){
+            ideal_picture_of_myself[i]= mainmat[0][i];
+            ideal_picutre_of_greg[i] = mainmat[0][i]; //this way of calculating the ideal worst is shit
+
+      }
       for (int i = 0 ; i < 3; i++){
             for (int k = 0 ; k < 3; k++){
                   if (mainmat[k][i] > ideal_picture_of_myself[i] ){
@@ -64,9 +66,15 @@ int main(){
             printf("%f ", ideal_picture_of_myself[i]);
       }
       printf("\n");
+
+      //ideal worst
       printf("IDEAL WORST\n");
       for (int i = 0 ; i < 3;i++ ){
             printf("%f ", ideal_picutre_of_greg[i]);
       }
+      
+      //what the fuck now?.
+
+
 }
 
