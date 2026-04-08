@@ -72,8 +72,57 @@ int main(){
       for (int i = 0 ; i < 3;i++ ){
             printf("%f ", ideal_picutre_of_greg[i]);
       }
+
+      printf("\n");
       
-      //what the fuck now?.
+      //what the fuck should i do now?.
+      //oh yeah separation measure
+      //its 04:26
+      
+      //anyway, separation measure.
+      double separationPos[3] = {0.0,0.0,0.0};
+      double negver[3] = {0.0,0.0,0.0};
+
+      printf("\n");
+      printf("\n");
+      for (int i = 0 ; i < 3; i++){
+            for (int j = 0 ; j < 3; j++){
+                  separationPos[i] += (mainmat[i][j] - ideal_picture_of_myself[j]) * 
+                        (mainmat[i][j] - ideal_picture_of_myself[j]);
+
+                  negver[i] += (mainmat[i][j] - ideal_picutre_of_greg[j]) * 
+                        (mainmat[i][j] - ideal_picutre_of_greg[j]);
+
+            }
+            negver[i] = sqrt(negver[i]);
+            separationPos[i] = sqrt(separationPos[i]);
+      }
+
+      for (int i = 0 ; i < 3;i++ ){
+            printf("%f ",separationPos[i]);
+      }
+
+      printf("\n");
+      printf("\n");
+
+      for (int i = 0 ; i < 3;i++ ){
+            printf("%f ", negver[i]);
+      }
+      
+      printf("\n");
+
+      double prefscore[3];
+      for (int i = 0 ; i < 3; i++){
+            prefscore[i] = negver[i] / ( negver[i] + separationPos[i]);
+      }
+
+      printf("\n");
+      printf("\n");
+
+      for (int i = 0 ; i < 3;i++ ){
+            printf("%f ",prefscore[i]);
+      }
+      printf("\n");
 
 
 }
